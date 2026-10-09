@@ -1,0 +1,95 @@
+[project]
+name = "directed-hypergraph-attention"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "numpy>=2.2.6",
+    "scipy>=1.14.0",
+    "torch>=2.7.0",
+    "torch_geometric",
+    "tqdm",
+    "configargparse",
+    "optuna",
+    "wandb>=0.23.1",
+    "matplotlib>=3.10.7",
+    "ipdb",
+    "pandas",
+    "scikit-learn",
+    "torch-geometric-signed-directed",
+    "networkx",
+]
+
+[project.optional-dependencies]
+cpu = [
+    "torch==2.8.0",
+    "torch_scatter",
+    "torch_sparse",
+    "torch_cluster",
+    "torch_spline_conv",
+    "pyg_lib",
+]
+gpu = [
+    "torch==2.8.0",
+    "torch_scatter",
+    "torch_sparse",
+    "torch_cluster",
+    "torch_spline_conv",
+    "pyg_lib",
+]
+
+[tool.uv]
+conflicts = [
+  [
+    { extra = "cpu" },
+    { extra = "gpu" }
+  ]
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu", extra = "cpu" },
+  { index = "pytorch-cuda128", extra = "gpu" }
+]
+
+torch_scatter = [
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cpu/torch_scatter-2.1.2+pt28cpu-cp310-cp310-linux_x86_64.whl", extra = "cpu" },
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cu128/torch_scatter-2.1.2+pt28cu128-cp310-cp310-linux_x86_64.whl", extra = "gpu" }
+]
+
+torch_sparse = [
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cpu/torch_sparse-0.6.18+pt28cpu-cp310-cp310-linux_x86_64.whl", extra = "cpu" },
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cu128/torch_sparse-0.6.18+pt28cu128-cp310-cp310-linux_x86_64.whl", extra = "gpu" }
+]
+
+torch_cluster = [
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cpu/torch_cluster-1.6.3+pt28cpu-cp310-cp310-linux_x86_64.whl", extra = "cpu" },
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cu128/torch_cluster-1.6.3+pt28cu128-cp310-cp310-linux_x86_64.whl", extra = "gpu" }
+]
+
+torch_spline_conv = [
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cpu/torch_spline_conv-1.2.2+pt28cpu-cp310-cp310-linux_x86_64.whl", extra = "cpu" },
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cu128/torch_spline_conv-1.2.2+pt28cu128-cp310-cp310-linux_x86_64.whl", extra = "gpu" }
+]
+
+pyg_lib = [
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cpu/pyg_lib-0.5.0+pt28cpu-cp310-cp310-linux_x86_64.whl", extra = "cpu" },
+  { url = "https://data.pyg.org/whl/torch-2.8.0+cu128/pyg_lib-0.5.0+pt28cu128-cp310-cp310-linux_x86_64.whl", extra = "gpu" }
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cuda128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "black>=25.12.0",
+    "jupyter>=1.1.1",
+]

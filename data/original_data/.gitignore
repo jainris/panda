@@ -1,0 +1,25 @@
+# ignore all the python cache files
+__pycache__/
+# ignore all the compiled python files
+*.pyc
+
+# ignore the folder hyperparameter_tuning
+hyperparameter_tuning/
+
+# ignore the data/processed_data folder
+data/processed_data/
+
+# ignore the AllSet_data
+AllSet_data/
+
+wandb/
+
+*.log
+
+sweeps/
+
+# ignore the images
+
+images/
+
+saved_sweep/
