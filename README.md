@@ -1,9 +1,9 @@
 # PANDA: Prior-guided Attentional Dual-path Architecture
-[![arXiv](https://img.shields.io/badge/arXiv-TODO-b31b1b.svg)](https://arxiv.org/abs/TODO)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.13635-b31b1b.svg)](https://arxiv.org/abs/2610.13635)
 [![PyTorch](https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white)](#)
 [![Apache 2.0 License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat)](LICENSE)
 
-This is the code repository for the paper ["PANDA: Prior-guided Attentional Dual-path Architecture"](https://arxiv.org/abs/TODO) introducing PANDA, a plugin for two-stage message passing HNNs applicable to both undirected and directed settings, that uses a dual-path architecture to incorporate structural priors, standard attention and non-competitive attention together to enhance the model's ability to capture complex relationships in the data. The paper has been accepted at NeurIPS 2026.
+This is the code repository for the paper ["PANDA: Prior-guided Attentional Dual-path Architecture"](https://arxiv.org/abs/2610.13635) introducing PANDA, a plugin for two-stage message passing HNNs applicable to both undirected and directed settings, that uses a dual-path architecture to incorporate structural priors, standard attention and non-competitive attention together to enhance the model's ability to capture complex relationships in the data. The paper has been accepted at NeurIPS 2026.
 
 ## Installation
 
@@ -210,6 +210,17 @@ contributions when applying the real-valued attention and auxiliary gates.
 - `training_args.py`, `model_names.py`: model construction, options, and variants.
 - `common_tuning.py`: Optuna search spaces and validation objective.
 - `data/original_data/`: included source datasets.
+
+## Citation
+
+```bibtex
+@inproceedings{jain2026panda,
+  title     = {PANDA: Prior-guided Attentional Dual-path Architecture},
+  author    = {Jain, Rishabh and Belotti, Federico and Coniglio, Stefano and Li{\`o}, Pietro and Fiorini, Stefano},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026}
+}
+```
 
 ## License
 
